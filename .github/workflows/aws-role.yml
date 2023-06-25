@@ -1,0 +1,15 @@
+name: CI-AWS-ROLE
+on:
+  push:
+    branches: [aws-role]
+jobs:
+  build:
+    name: Test AWS Role
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure AWS credentials TEST
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: eu-north-1
