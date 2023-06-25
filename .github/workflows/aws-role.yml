@@ -10,17 +10,17 @@ permissions:
 jobs:
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
-      steps:
-        - name: Git clone the repository
-          uses: actions/checkout@v3
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
 
-        - name: Configure AWS credentials TEST
-          uses: aws-actions/configure-aws-credentials@v2
-          with:
-            role-to-assume: ${{ secrets.AWS_ROLE }}
-            role-session-name: GitHub_to_AWS_via_FederatedOIDC
-            aws-region: ${{ env.AWS_REGION }}
+      - name: Configure AWS credentials TEST
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
 
-        - name: Sts GetCallerIdentity
-          run: |
-            aws sts get-caller-identity
+      - name: Sts GetCallerIdentity
+        run: |
+          aws sts get-caller-identity
