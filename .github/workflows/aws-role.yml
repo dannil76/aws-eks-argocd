@@ -1,15 +1,12 @@
 name: Connect to an AWS role from a GitHub repository
-
 on:
   push:
     branches: [aws-role]
 env:
   AWS_REGION: eu-north-1
-
 permissions:
   id-token: write
   contents: write
-
 jobs:
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
