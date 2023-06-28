@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   pullPolicy: IfNotPresent
   repository: 020402302769.dkr.ecr.eu-north-1.amazonaws.com/argoeks
-  version: main-11f1fa5
+  version: main-f06dd3c
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
